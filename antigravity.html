@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>اینٹی گریویٹی AI اکیڈمی | Next-Gen AI & Software Development Mastery</title>
+  <meta name="description" content="گوگل اینٹی گریویٹی، کلاؤڈ، مڈجرنی، چیٹ جی پی ٹی، کلاڈ، کروم ایکسٹینشنز، ورڈپریس تھیمز اور اے آئی ایجنٹس سے جدید سافٹ ویئر ڈویلپمنٹ سیکھیں۔">
+
+  <!-- Google Fonts: Readex Pro (Modern Urdu & English support) + Outfit + Fira Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Outfit:wght@400;600;700;800;900&family=Readex+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background 3D Canvas -->
+  <div id="webgl-container"></div>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- Announcement Ticker / Urgency Top Bar -->
+  <header class="top-announcement">
+    <div class="container announcement-inner">
+      <span class="live-pulse"></span>
+      <p>🔥 <strong>نیا بیچ:</strong> رجسٹریشن شروع ہو چکی ہے! ابتدائی <strong>15 طلباء</strong> کے لیے <strong>40% فلیٹ رعایت</strong> اور خصوصی بونسز دستیاب ہیں۔</p>
+      <div class="countdown-mini" id="top-countdown">
+        <span>باقی وقت: </span>
+        <span class="cd-box" id="cd-hours">12</span>:
+        <span class="cd-box" id="cd-mins">45</span>:
+        <span class="cd-box" id="cd-secs">30</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-atom fa-spin-pulse"></i>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">ANTIGRAVITY<span class="accent-dot">.</span>AI</span>
+          <span class="brand-sub">سافٹ ویئر انجینئرنگ اکیڈمی</span>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#curriculum">نصاب (Curriculum)</a></li>
+        <li><a href="#projects">پراجیکٹس</a></li>
+        <li><a href="#tools">ٹولز کٹ</a></li>
+        <li><a href="#pricing">فیس و داخلہ</a></li>
+        <li><a href="#testimonials">کامیابیاں</a></li>
+        <li><a href="#faq">عمومی سوالات</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="#pricing" class="btn btn-outline nav-btn">سلیبس ڈاؤنلوڈ کریں</a>
+        <button class="btn btn-primary open-modal-btn" data-plan="Pro AI Engineer">داخلہ محفوظ کریں 🚀</button>
+      </div>
+
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section with 3D Centerpiece -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-sparkles"></i>
+          <span>گوگل اینٹی گریویٹی اور ماڈرن AI ڈیولپمنٹ ماسٹرکلاس</span>
+        </div>
+
+        <h1 class="hero-title">
+          روایتی کوڈنگ بھول جائیں!<br>
+          <span class="gradient-text">Google Antigravity & AI</span> کے ساتھ سافٹ ویئر کا مستقبل تخلیق کریں
+        </h1>
+
+        <p class="hero-desc">
+          کلائوڈ سسٹمز، کلاڈ، مڈجرنی اور چیٹ جی پی ٹی کا انقلابی امتزاج! اب گھنٹوں کی محنت سیکنڈوں میں بدلیں۔ خودکار کروم ایکسٹینشنز، کسٹم ورڈپریس تھیمز اور پلگ انز، 3D ویب سائٹس اور مکمل AI ایجنٹس بنانا عملی طور پر سیکھیں۔
+        </p>
+
+        <!-- Live Metrics Bar -->
+        <div class="hero-metrics">
+          <div class="metric-item">
+            <span class="metric-val" data-target="45">45+</span>
+            <span class="metric-label">جدید AI ٹولز (پیڈ + فری)</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val" data-target="10">10+</span>
+            <span class="metric-label">لائیو ریئل ورلڈ پراجیکٹس</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-val">100%</span>
+            <span class="metric-label">ہینڈز آن پریکٹیکل ٹریننگ</span>
+          </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group">
+          <button class="btn btn-primary btn-lg pulse-glow open-modal-btn" data-plan="Pro AI Engineer">
+            <span>ابھی کلاس میں داخلہ لیں</span>
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <a href="#curriculum" class="btn btn-glass btn-lg">
+            <i class="fa-solid fa-book-open"></i>
+            <span>مکمل کورس آؤٹ لائن دیکھیں</span>
+          </a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="avatar-stack">
+            <span class="avatar av-1">👨‍💻</span>
+            <span class="avatar av-2">👩‍💻</span>
+            <span class="avatar av-3">🧑‍💻</span>
+            <span class="avatar av-4">🚀</span>
+          </div>
+          <div class="trust-text">
+            <strong>1,850+ پروفیشنلز</strong> ہمارے AI فریم ورک سے اپنی آمدن 3 گنا بڑھا چکے ہیں۔
+          </div>
+        </div>
+      </div>
+
+      <!-- 3D Interactive Card / Futuristic Hologram Box -->
+      <div class="hero-visual">
+        <div class="holo-card glass-panel" id="holoCard">
+          <div class="holo-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="holo-title-text"><i class="fa-solid fa-terminal"></i> Antigravity Agent Engine v2.4</span>
+            <span class="status-live">ONLINE ●</span>
+          </div>
+          <div class="holo-body">
+            <div class="code-line"><span class="cmd-prompt">></span> <span class="cmd-ai">init antigravity --workspace="ai-production"</span></div>
+            <div class="code-line success"><span class="cmd-check">✔</span> Google Antigravity Agent Connected</div>
+            <div class="code-line"><span class="cmd-prompt">></span> <span class="cmd-ai">deploy --stack="Claude-3.5 + Midjourney + Cloud-DB"</span></div>
+            <div class="code-line highlight"><span class="cmd-gear">⚙</span> Generating Fullstack Chrome Ext & WP Plugin...</div>
+            
+            <div class="interactive-hologram-preview">
+              <div class="holo-core-sphere">
+                <div class="core-ring ring-1"></div>
+                <div class="core-ring ring-2"></div>
+                <div class="core-ring ring-3"></div>
+                <div class="core-center-icon">
+                  <i class="fa-solid fa-brain"></i>
+                </div>
+              </div>
+              <div class="floating-tag tag-1"><i class="fa-brands fa-google"></i> Antigravity IDE</div>
+              <div class="floating-tag tag-2"><i class="fa-solid fa-bolt"></i> Flowise & n8n</div>
+              <div class="floating-tag tag-3"><i class="fa-brands fa-wordpress"></i> WP Plugins AI</div>
+              <div class="floating-tag tag-4"><i class="fa-brands fa-chrome"></i> Extension Pro</div>
+            </div>
+
+            <div class="holo-footer-action">
+              <span>Ready to build 10x faster?</span>
+              <button class="btn btn-sm btn-neon open-modal-btn" data-plan="Demo Access">ٹرائل شروع کریں</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Ecosystem Ribbon -->
+  <section class="tools-ticker-section">
+    <p class="ticker-heading">عالمی معیار کے جدید ترین اے آئی ٹولز جو اس کورس میں شامل ہیں:</p>
+    <div class="tools-scroller">
+      <div class="scroller-inner">
+        <div class="tool-chip"><i class="fa-brands fa-google"></i> Google Antigravity</div>
+        <div class="tool-chip"><i class="fa-solid fa-cloud"></i> Cloud Platform (AWS/Vercel)</div>
+        <div class="tool-chip"><i class="fa-solid fa-palette"></i> Midjourney v6</div>
+        <div class="tool-chip"><i class="fa-solid fa-microchip"></i> Claude 3.5 Sonnet</div>
+        <div class="tool-chip"><i class="fa-solid fa-robot"></i> ChatGPT-4o & Reasoning</div>
+        <div class="tool-chip"><i class="fa-brands fa-chrome"></i> Chrome Extensions V3</div>
+        <div class="tool-chip"><i class="fa-brands fa-wordpress"></i> WordPress AI Dev</div>
+        <div class="tool-chip"><i class="fa-solid fa-diagram-project"></i> Flowise & Langflow</div>
+        <div class="tool-chip"><i class="fa-solid fa-network-wired"></i> n8n Workflows</div>
+        <div class="tool-chip"><i class="fa-solid fa-cube"></i> Three.js 3D WebGL</div>
+        <div class="tool-chip"><i class="fa-solid fa-database"></i> Supabase / Firebase</div>
+        <!-- Duplicated for continuous loop -->
+        <div class="tool-chip"><i class="fa-brands fa-google"></i> Google Antigravity</div>
+        <div class="tool-chip"><i class="fa-solid fa-cloud"></i> Cloud Platform (AWS/Vercel)</div>
+        <div class="tool-chip"><i class="fa-solid fa-palette"></i> Midjourney v6</div>
+        <div class="tool-chip"><i class="fa-solid fa-microchip"></i> Claude 3.5 Sonnet</div>
+        <div class="tool-chip"><i class="fa-solid fa-robot"></i> ChatGPT-4o & Reasoning</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Traditional vs Antigravity Comparison -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub-badge">روایتی طریقے بمقابلہ جدید دور</span>
+        <h2 class="section-heading">آپ پیچھے کیوں رہ رہے ہیں؟ <span class="gradient-text">حقیقت کا موازنہ</span></h2>
+        <p class="section-desc">دنیا بدل چکی ہے۔ جو کام پہلے مہینوں اور ہزاروں ڈالر میں ہوتا تھا، وہ آج کا اسمارٹ ڈویلپر کچھ گھنٹوں میں مکمل کر لیتا ہے۔</p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comp-card old-way">
+          <div class="comp-badge old"><i class="fa-solid fa-xmark"></i> پرانا اور روایتی طریقہ</div>
+          <h3>روایتی کوڈنگ اور فری لانسنگ</h3>
+          <ul class="comp-list">
+            <li><i class="fa-solid fa-circle-xmark"></i> مہینوں تک بنیادی زبانوں کے سنٹیکس رٹنا۔</li>
+            <li><i class="fa-solid fa-circle-xmark"></i> ایک معمولی ویب سائٹ یا پلگ ان بنانے میں ہفتوں کا وقت۔</li>
+            <li><i class="fa-solid fa-circle-xmark"></i> کروم ایکسٹینشنز یا کلاؤڈ آرکیٹیکچر کا نہ ہونا۔</li>
+            <li><i class="fa-solid fa-circle-xmark"></i> فائیور اور اپ ورک پر معمولی قیمتوں کے لیے مسابقت۔</li>
+            <li><i class="fa-solid fa-circle-xmark"></i> AI کے آنے سے ملازمت چھوٹنے کا مسلسل خوف۔</li>
+          </ul>
+        </div>
+
+        <div class="comp-card new-way glass-panel active-glow">
+          <div class="comp-badge modern"><i class="fa-solid fa-bolt"></i> اینٹی گریویٹی AI طریقہ (ہمارا کورس)</div>
+          <h3>Next-Gen AI Software Architect</h3>
+          <ul class="comp-list">
+            <li><i class="fa-solid fa-circle-check"></i> پہلے ہی دن سے AI کو بطور فل اسٹیک ڈویلپر کنٹرول کرنا۔</li>
+            <li><i class="fa-solid fa-circle-check"></i> گھنٹوں میں پروڈکشن گریڈ کروم ایکسٹینشنز اور ورڈپریس پلگ انز تیار کرنا۔</li>
+            <li><i class="fa-solid fa-circle-check"></i> n8n اور Flowise کے ذریعے بغیر کوڈ کے خودکار منافع بخش فلو بنانا۔</li>
+            <li><i class="fa-solid fa-circle-check"></i> عالمی کلائنٹس کو $1,000 سے $5,000 مالیت کے سسٹمز بنا کر دینا۔</li>
+            <li><i class="fa-solid fa-circle-check"></i> خود اپنا مائیکرو ساس (Micro-SaaS) بنا کر پیسیو انکم کمانا۔</li>
+          </ul>
+          <div class="comp-cta">
+            <button class="btn btn-primary w-100 open-modal-btn" data-plan="Pro AI Engineer">جدید راستے کا انتخاب کریں ⚡</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Course Curriculum Section -->
+  <section class="curriculum-section" id="curriculum">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub-badge">جامع نصاب</span>
+        <h2 class="section-heading">کورس کا تفصیلی <span class="gradient-text">ماڈیول فریم ورک</span></h2>
+        <p class="section-desc">صفر سے لے کر مکمل پروڈکٹ بلڈر بننے تک کا عملی روڈ میپ۔ کوئی فضول تھیوری نہیں، صرف مارکیٹ کی ضرورت۔</p>
+      </div>
+
+      <div class="curriculum-accordion">
+        
+        <!-- Module 1 -->
+        <div class="accordion-item glass-panel active">
+          <button class="accordion-header">
+            <div class="acc-meta">
+              <span class="module-num">ماڈیول 01</span>
+              <span class="acc-title">Google Antigravity اور AI-First سافٹ ویئر ڈویلپمنٹ کا آغاز</span>
+            </div>
+            <div class="acc-tags">
+              <span class="pill pill-cyan">Antigravity CLI</span>
+              <span class="pill pill-purple">Cloud Setup</span>
+              <i class="fa-solid fa-chevron-down acc-arrow"></i>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <p class="acc-desc">گوگل اینٹی گریویٹی کے پورے ایکو سسٹم کو سمجھنا، کلاؤڈ انوائرنمنٹ کی تنصیب اور AI سب ایجنٹس کو کنٹرول کرنا۔</p>
+            <div class="topic-grid">
+              <div class="topic-card">
+                <i class="fa-solid fa-terminal"></i>
+                <strong>اینٹی گریویٹی ماحول:</strong> CLI، ایجنٹس، ٹولز آرکیٹیکچر اور اٹونومس کوڈنگ فلو۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <strong>کلاؤڈ ورک اسپیس:</strong> کلاؤڈ سرورز اور ہوسٹنگ پر خودکار ڈیپلائمنٹ سیٹ اپ۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-sliders"></i>
+                <strong>پیڈ بمقابلہ فری ٹولز:</strong> کب مفت ٹولز استعمال کرنے ہیں اور کب پیڈ ٹولز سے کام لینا ہے۔
+              </div>
+            </div>
+            <div class="module-project-badge">
+              <i class="fa-solid fa-trophy"></i>
+              <strong>ہینڈز آن پراجیکٹ:</strong> اپنی پہلی کلاؤڈ-کنیکٹڈ خودکار AI ورک اسپیس کی تیاری۔
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="accordion-item glass-panel">
+          <button class="accordion-header">
+            <div class="acc-meta">
+              <span class="module-num">ماڈیول 02</span>
+              <span class="acc-title">ایڈوانسڈ ماڈل ماسٹری (Claude 3.5، ChatGPT-4o، Midjourney v6)</span>
+            </div>
+            <div class="acc-tags">
+              <span class="pill pill-cyan">Claude Sonnet</span>
+              <span class="pill pill-purple">Midjourney UI</span>
+              <i class="fa-solid fa-chevron-down acc-arrow"></i>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <p class="acc-desc">عام پرامپٹس کو چھوڑ کر پروڈکشن گریڈ پرامپٹ انجینئرنگ، سسٹم آرکیٹیکچر ڈیزائن اور بصری اثاثوں کی جنریشن۔</p>
+            <div class="topic-grid">
+              <div class="topic-card">
+                <i class="fa-solid fa-code"></i>
+                <strong>کلاڈ 3.5 سونٹ کے کمالات:</strong> آرٹیکٹیکٹس اور کلین، پائیدار بیک اینڈ و فرنٹ اینڈ کوڈ۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-brain"></i>
+                <strong>اوپن اے آئی ریزننگ ماڈلز:</strong> منطقی الگورتھمز اور سافٹ ویئر اسکیما ڈیزائن۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <strong>مڈجرنی v6 اور 3D اثاثے:</strong> ہائی ریزولیوشن UI/UX، تھری ڈی ماڈلز اور شاندار گرافکس۔
+              </div>
+            </div>
+            <div class="module-project-badge">
+              <i class="fa-solid fa-trophy"></i>
+              <strong>ہینڈز آن پراجیکٹ:</strong> ایک جدید ٹیک برانڈ کے لیے مکمل UI/UX اور ویکٹر برانڈ کٹ۔
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="accordion-item glass-panel">
+          <button class="accordion-header">
+            <div class="acc-meta">
+              <span class="module-num">ماڈیول 03</span>
+              <span class="acc-title">جدید 3D ویب سائٹس اور فل اسٹیک ویب ایپلی کیشنز</span>
+            </div>
+            <div class="acc-tags">
+              <span class="pill pill-cyan">Three.js 3D</span>
+              <span class="pill pill-purple">Full-Stack SaaS</span>
+              <i class="fa-solid fa-chevron-down acc-arrow"></i>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <p class="acc-desc">Three.js، WebGL اور جدید ترین جاوا اسکرپٹ فریم ورکس کی مدد سے 3D دلکش اور انٹرایکٹو ویب سائٹس بنانا۔</p>
+            <div class="topic-grid">
+              <div class="topic-card">
+                <i class="fa-solid fa-cube"></i>
+                <strong>WebGL اور Three.js:</strong> 3D کیمرہ، لائٹنگ، جیومیٹری اور ماؤس انٹرایکشن۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-database"></i>
+                <strong>کلاؤڈ ڈیٹا بیس:</strong> سپابیس (Supabase) اور فائر بیس کے ساتھ یوزر آتھنٹیکیشن۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-rocket"></i>
+                <strong>لائیو ڈیپلائمنٹ:</strong> کلاؤڈ فلیئر اور ورسیل پر گلوبل سی ڈی این کے ساتھ لائیو کرنا۔
+              </div>
+            </div>
+            <div class="module-project-badge">
+              <i class="fa-solid fa-trophy"></i>
+              <strong>ہینڈز آن پراجیکٹ:</strong> ایک مکمل 3D انٹرایکٹو سائبرپنک ویب سائٹ اور یوزر ڈیش بورڈ۔
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="accordion-item glass-panel">
+          <button class="accordion-header">
+            <div class="acc-meta">
+              <span class="module-num">ماڈیول 04</span>
+              <span class="acc-title">کروم ایکسٹینشنز انجینئرنگ (Chrome Extensions Mastery)</span>
+            </div>
+            <div class="acc-tags">
+              <span class="pill pill-cyan">Manifest V3</span>
+              <span class="pill pill-purple">Web Store Sell</span>
+              <i class="fa-solid fa-chevron-down acc-arrow"></i>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <p class="acc-desc">براؤزر ایکسٹینشنز بنانا انتہائی منافع بخش ہے۔ آپ خودکار ایکسٹینشنز بنانا اور انہیں ویب اسٹور پر فروخت کرنا سیکھیں گے۔</p>
+            <div class="topic-grid">
+              <div class="topic-card">
+                <i class="fa-brands fa-chrome"></i>
+                <strong>Manifest V3:</strong> بیک گراؤنڈ ورکرز، کنٹینٹ اسکرپٹس اور اسٹوریج API۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-comment-dots"></i>
+                <strong>AI انٹیگریشن:</strong> براؤزر میں براہِ راست چیٹ جی پی ٹی و کلاڈ API کے ساتھ انٹرایکشن۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <strong>پبلشنگ اور پیمنٹس:</strong> گوگل ویب اسٹور پر اپروول اور اسٹرائپ مونیٹائزیشن۔
+              </div>
+            </div>
+            <div class="module-project-badge">
+              <i class="fa-solid fa-trophy"></i>
+              <strong>ہینڈز آن پراجیکٹ:</strong> لائیو AI ویب اسسٹنٹ و یوٹیوب سمری جنریٹر کروم ایکسٹینشن۔
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="accordion-item glass-panel">
+          <button class="accordion-header">
+            <div class="acc-meta">
+              <span class="module-num">ماڈیول 05</span>
+              <span class="acc-title">ورڈپریس کسٹم تھیمز اور پلگ انز ڈویلپمنٹ مع AI</span>
+            </div>
+            <div class="acc-tags">
+              <span class="pill pill-cyan">Custom Plugins</span>
+              <span class="pill pill-purple">Envato Market</span>
+              <i class="fa-solid fa-chevron-down acc-arrow"></i>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <p class="acc-desc">ورڈپریس انٹرنیٹ کی 40% سے زیادہ ویب سائٹس چلا رہا ہے۔ AI کی طاقت سے کسٹم تھیمز اور پریمیم پلگ انز تیار کریں۔</p>
+            <div class="topic-grid">
+              <div class="topic-card">
+                <i class="fa-brands fa-wordpress-simple"></i>
+                <strong>پلگ ان آرکیٹیکچر:</strong> ہکس، فلٹرز، شارٹ کوڈز اور کسٹم پوسٹ ٹائپس کی خودکاری۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <strong>سیکیورٹی اور پرفارمنس:</strong> ایس کیو ایل انجیکشن، ایکس ایس ایس سے بچاؤ اور اسپیڈ آپٹمائزیشن۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-coins"></i>
+                <strong>سیلنگ روٹ:</strong> CodeCanyon یا ذاتی ویب سائٹ پر $49-$99 میں پلگ ان فروخت کرنے کا فریم ورک۔
+              </div>
+            </div>
+            <div class="module-project-badge">
+              <i class="fa-solid fa-trophy"></i>
+              <strong>ہینڈز آن پراجیکٹ:</strong> ورڈپریس کے لیے مکمل فنکشنل "AI آٹو کنٹینٹ جنریٹر اور ایس ای او پلگ ان"۔
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 6 -->
+        <div class="accordion-item glass-panel">
+          <button class="accordion-header">
+            <div class="acc-meta">
+              <span class="module-num">ماڈیول 06</span>
+              <span class="acc-title">بصری فلو اور خودکار ایجنٹس (Flowise, Langflow, n8n)</span>
+            </div>
+            <div class="acc-tags">
+              <span class="pill pill-cyan">n8n Automation</span>
+              <span class="pill pill-purple">Langflow RAG</span>
+              <i class="fa-solid fa-chevron-down acc-arrow"></i>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <p class="acc-desc">بغیر کوڈنگ کے پیچیدہ بزنس پروسیسز کو خودکار بنائیں۔ n8n اور Langflow کے ذریعے خودکار AI ورک فلو بنانا سیکھیں۔</p>
+            <div class="topic-grid">
+              <div class="topic-card">
+                <i class="fa-solid fa-diagram-project"></i>
+                <strong>n8n ماسٹری:</strong> ویب ہکس، کلاؤڈ اے پی آئیز، ٹیلیگرام/واٹس ایپ بوٹس کی خودکاری۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-network-wired"></i>
+                <strong>Flowise & Langflow:</strong> ذاتی دستاویزات پر مبنی کسٹم نالج بیس اور RAG سسٹمز۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-server"></i>
+                <strong>24/7 کلاؤڈ ہوسٹنگ:</strong> سستے کلاؤڈ سرورز پر اپنے ایجنٹس کو مسلسل لائیو رکھنا۔
+              </div>
+            </div>
+            <div class="module-project-badge">
+              <i class="fa-solid fa-trophy"></i>
+              <strong>ہینڈز آن پراجیکٹ:</strong> ایک ملٹی چینل خودکار کسٹمر سپورٹ و لیڈ کوالیفائر ایجنٹ۔
+            </div>
+          </div>
+        </div>
+
+        <!-- Module 7 -->
+        <div class="accordion-item glass-panel">
+          <button class="accordion-header">
+            <div class="acc-meta">
+              <span class="module-num">ماڈیول 07</span>
+              <span class="acc-title">فری لانسنگ، مائیکرو ساس اور کمرشلائزیشن بلیو پرنٹ</span>
+            </div>
+            <div class="acc-tags">
+              <span class="pill pill-cyan">Micro-SaaS</span>
+              <span class="pill pill-purple">Upwork / Fiverr</span>
+              <i class="fa-solid fa-chevron-down acc-arrow"></i>
+            </div>
+          </button>
+          <div class="accordion-body">
+            <p class="acc-desc">سکلز سیکھنے کے بعد اصل منزل ہے کمائی! بین الاقوامی کلائنٹس حاصل کرنے، پورٹ فولیو بنانے اور مائیکرو ساس سے پیسیو انکم کا مکمل روڈ میپ۔</p>
+            <div class="topic-grid">
+              <div class="topic-card">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <strong>ہائی پےئنگ کلائنٹس:</strong> اپ ورک اور لنکڈ ان پر $50/hour پروجیکٹس حاصل کرنے کا طریقہ۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <strong>مائیکرو ساس آئیڈیاز:</strong> 7 دنوں میں ایک چھوٹا ساس بنا کر ماہانہ سبسکرپشن چارج کرنا۔
+              </div>
+              <div class="topic-card">
+                <i class="fa-solid fa-certificate"></i>
+                <strong>سرٹیفیکیشن و رہنمائی:</strong> ذاتی پراجیکٹ آڈٹ، لائیو رہنمائی اور خصوصی ایلومنائی نیٹ ورک۔
+              </div>
+            </div>
+            <div class="module-project-badge">
+              <i class="fa-solid fa-trophy"></i>
+              <strong>ہینڈز آن پراجیکٹ:</strong> آپ کا ذاتی AI ڈویلپر پورٹ فولیو اور لائیو پروپوزل پچ۔
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Project Showcase Section -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub-badge">عملی تیاری</span>
+        <h2 class="section-heading">کورس کے دوران آپ <span class="gradient-text">کیا بنائیں گے؟</span></h2>
+        <p class="section-desc">صرف سلائیڈز نہیں، بلکہ 4 مکمل انڈسٹری گریڈ پروڈکٹس جو آپ کے پورٹ فولیو کا وقار بڑھائیں گی۔</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card glass-panel">
+          <div class="project-header">
+            <span class="project-tag"><i class="fa-brands fa-chrome"></i> براؤزر ایکسٹینشن</span>
+            <span class="badge-status">تیار پراجیکٹ</span>
+          </div>
+          <div class="project-visual p-chrome">
+            <div class="mock-browser">
+              <div class="mock-bar"><span>https://ai-reader.ext</span></div>
+              <div class="mock-inner">
+                <div class="mock-btn"><i class="fa-solid fa-wand-magic"></i> ایک کلک سمری</div>
+                <div class="mock-line"></div>
+                <div class="mock-line short"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>AI ویب اسسٹنٹ و یوٹیوب ایکسٹینشن</h3>
+            <p>گوگل کروم میں کسی بھی آرٹیکل، یوٹیوب ویڈیو یا پی ڈی ایف کی سیکنڈوں میں سمری اور کسٹم چیٹ کرنے والا پروڈکٹ۔</p>
+            <div class="tech-stack-row">
+              <span>Manifest V3</span>
+              <span>Claude API</span>
+              <span>JavaScript</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card glass-panel">
+          <div class="project-header">
+            <span class="project-tag"><i class="fa-brands fa-wordpress"></i> ورڈپریس پلگ ان</span>
+            <span class="badge-status">کمرشل ریڈی</span>
+          </div>
+          <div class="project-visual p-wp">
+            <div class="mock-wp-box">
+              <div class="mock-wp-header"><i class="fa-brands fa-wordpress"></i> AI Content Engine</div>
+              <div class="mock-wp-badge">Auto Publishing Active</div>
+              <div class="mock-stat-bar"><div class="fill"></div></div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>آٹو بلاگنگ اور AI ایس ای او پلگ ان</h3>
+            <p>ایک مکمل ورڈپریس پلگ ان جو جدید کی ورڈز پر معیاری مضامین خود بخود لکھتا ہے، امیجز بناتا ہے اور پوسٹ کرتا ہے۔</p>
+            <div class="tech-stack-row">
+              <span>PHP / WP Hooks</span>
+              <span>OpenAI API</span>
+              <span>REST API</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card glass-panel">
+          <div class="project-header">
+            <span class="project-tag"><i class="fa-solid fa-cube"></i> فل اسٹیک 3D ساس</span>
+            <span class="badge-status">ہائی ویلیو</span>
+          </div>
+          <div class="project-visual p-saas">
+            <div class="mock-saas-box">
+              <div class="cube-icon"><i class="fa-solid fa-cubes"></i></div>
+              <div class="live-data-text">3D WebGL Canvas Online</div>
+              <div class="price-pill">$49/mo</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>3D انٹرایکٹو پروڈکٹ کسٹمائزر ویب ایپ</h3>
+            <p>Three.js اور جدید ویب ٹیکنالوجیز کی مدد سے 3D پروڈکٹ ویژولائزر جو صارفین کو انٹرایکٹو لائیو ماڈلنگ دکھاتا ہے۔</p>
+            <div class="tech-stack-row">
+              <span>Three.js</span>
+              <span>TailwindCSS</span>
+              <span>Supabase</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card glass-panel">
+          <div class="project-header">
+            <span class="project-tag"><i class="fa-solid fa-robot"></i> خودکار ایجنٹ فلو</span>
+            <span class="badge-status">ایجنسی گریڈ</span>
+          </div>
+          <div class="project-visual p-flow">
+            <div class="mock-flow-nodes">
+              <div class="node n1"><i class="fa-solid fa-envelope"></i> Lead</div>
+              <div class="flow-line"></div>
+              <div class="node n2"><i class="fa-solid fa-brain"></i> AI Decision</div>
+              <div class="flow-line"></div>
+              <div class="node n3"><i class="fa-brands fa-whatsapp"></i> Instant Deal</div>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>24/7 ملٹی ایجنٹ آٹومیشن پائپ لائن</h3>
+            <p>n8n اور Flowise کے ذریعے بغیر انسانی مداخلت کے کسٹمر سپورٹ، ای میلز، ڈیٹا اینٹری اور واٹس ایپ سیلز کو خودکار بنانے والا سسٹم۔</p>
+            <div class="tech-stack-row">
+              <span>n8n</span>
+              <span>Flowise</span>
+              <span>Webhooks</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Tools Arsenal Matrix -->
+  <section class="tools-section" id="tools">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub-badge">ٹول کٹ</span>
+        <h2 class="section-heading">پیڈ اور فری ٹولز کا <span class="gradient-text">مکمل ذخیرہ</span></h2>
+        <p class="section-desc">ہم آپ کو سکھائیں گے کہ کس طرح بغیر بھاری اخراجات کے مفت ٹولز کا بھرپور فائدہ اٹھایا جائے اور کب پیڈ ٹولز میں انویسٹ کرنا ہے۔</p>
+      </div>
+
+      <div class="tools-filter-bar">
+        <button class="filter-btn active" data-filter="all">تمام ٹولز</button>
+        <button class="filter-btn" data-filter="free">مفت ٹولز (Free Tier)</button>
+        <button class="filter-btn" data-filter="pro">پرو / پیڈ ٹولز (Pro)</button>
+        <button class="filter-btn" data-filter="dev">کوڈنگ اور ویب (Dev)</button>
+      </div>
+
+      <div class="tools-grid">
+        <div class="tool-card glass-panel" data-cat="all pro dev">
+          <div class="tool-badge badge-pro">پرو / پریمیم</div>
+          <div class="tool-icon"><i class="fa-brands fa-google"></i></div>
+          <h4>Google Antigravity</h4>
+          <p>جدید ترین AI ایجنٹک کوڈنگ اسسٹنٹ اور ڈیولپمنٹ ورک بینچ۔</p>
+        </div>
+
+        <div class="tool-card glass-panel" data-cat="all pro dev">
+          <div class="tool-badge badge-pro">پرو ماڈل</div>
+          <div class="tool-icon"><i class="fa-solid fa-code"></i></div>
+          <h4>Claude 3.5 Sonnet</h4>
+          <p>سافٹ ویئر کوڈنگ اور پیچیدہ آرکیٹیکچر کا بے تاج بادشاہ۔</p>
+        </div>
+
+        <div class="tool-card glass-panel" data-cat="all free pro dev">
+          <div class="tool-badge badge-free">فری + پرو</div>
+          <div class="tool-icon"><i class="fa-solid fa-robot"></i></div>
+          <h4>ChatGPT-4o & Reasoning</h4>
+          <p>بزنس لاجک، الگو رتھم پلاننگ اور کسٹمر فیسنگ چیٹ فریم ورکس۔</p>
+        </div>
+
+        <div class="tool-card glass-panel" data-cat="all pro">
+          <div class="tool-badge badge-pro">پرو ماڈل</div>
+          <div class="tool-icon"><i class="fa-solid fa-palette"></i></div>
+          <h4>Midjourney v6</h4>
+          <p>حیران کن UI/UX ڈیزائنز، سائبرپنک 3D اثاثے اور اسٹائل گائیڈز۔</p>
+        </div>
+
+        <div class="tool-card glass-panel" data-cat="all free dev">
+          <div class="tool-badge badge-free">100% اوپن سورس</div>
+          <div class="tool-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h4>n8n Community</h4>
+          <p>مکمل بزنس آٹومیشن بغیر کسی ماہانہ فیس کے اپنے لوکل سسٹم پر۔</p>
+        </div>
+
+        <div class="tool-card glass-panel" data-cat="all free dev">
+          <div class="tool-badge badge-free">اوپن سورس</div>
+          <div class="tool-icon"><i class="fa-solid fa-diagram-project"></i></div>
+          <h4>Flowise & Langflow</h4>
+          <p>ڈرئیگ اینڈ ڈراپ RAG اور چیٹ ایجنٹ بنانے کا جدید ترین بصری ٹول۔</p>
+        </div>
+
+        <div class="tool-card glass-panel" data-cat="all free dev">
+          <div class="tool-badge badge-free">فری ڈویلپمنٹ</div>
+          <div class="tool-icon"><i class="fa-brands fa-chrome"></i></div>
+          <h4>Chrome Extension APIs</h4>
+          <p>Manifest V3 پر مبنی تیز ترین براؤزر ایکسٹینشنز بنانے کا مکمل فریم ورک۔</p>
+        </div>
+
+        <div class="tool-card glass-panel" data-cat="all free dev">
+          <div class="tool-badge badge-free">اوپن سورس</div>
+          <div class="tool-icon"><i class="fa-brands fa-wordpress"></i></div>
+          <h4>WordPress Core & LocalWP</h4>
+          <p>ورڈپریس کے کسٹم تھیمز اور پلگ انز کی لوکل ٹیسٹنگ و ڈویلپمنٹ۔</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing & Enrollment Options (High Conversion) -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub-badge">محدود نشستیں</span>
+        <h2 class="section-heading">اپنا مستقبل منتخب کریں - <span class="gradient-text">فیس و رجسٹریشن</span></h2>
+        <p class="section-desc">ایک بار کی انویسٹمنٹ جو آپ کے کریئر اور فنانشل آزادی کے سفر کو ہمیشہ کے لیے بدل سکتی ہے۔</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- Plan 1 -->
+        <div class="price-card glass-panel">
+          <div class="plan-header">
+            <span class="plan-type">سیلف پیسڈ (Self-Paced)</span>
+            <h3 class="plan-name">سٹارٹر AI ایکسپلورر</h3>
+            <p class="plan-sub">ان افراد کے لیے جو بنیادی بنیادیں مضبوط کرنا چاہتے ہیں۔</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">PKR</span>
+            <span class="amount">18,500</span>
+            <span class="term">/ مکمل کورس</span>
+          </div>
+          <div class="plan-saving">معیاری قیمت: <s>PKR 30,000</s> (38% بچت)</div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> تمام 7 ماڈیولز کی ایچ ڈی ریکارڈنگز</li>
+            <li><i class="fa-solid fa-check"></i> ریڈی میڈ کوڈ اور پرامپٹ لائبریری</li>
+            <li><i class="fa-solid fa-check"></i> لائف ٹائم کورس پورٹل ایکسیس</li>
+            <li><i class="fa-solid fa-check"></i> بنیادی ڈسکارڈ کمیونٹی رسائی</li>
+            <li class="disabled"><i class="fa-solid fa-xmark"></i> لائیو 1-on-1 پراجیکٹ آڈٹ</li>
+            <li class="disabled"><i class="fa-solid fa-xmark"></i> مائیکرو ساس لانچنگ کٹ</li>
+          </ul>
+          <button class="btn btn-outline w-100 open-modal-btn" data-plan="Starter AI Explorer">سٹارٹر میں داخلہ لیں</button>
+        </div>
+
+        <!-- Plan 2 (Highlighted / Recommended) -->
+        <div class="price-card glass-panel featured-plan">
+          <div class="featured-badge">🔥 سب سے زیادہ مقبول (Best Value)</div>
+          <div class="plan-header">
+            <span class="plan-type">لائیو بوٹ کیمپ + پریکٹیکل</span>
+            <h3 class="plan-name">پرو AI انجینئر ماسٹر کلاس</h3>
+            <p class="plan-sub">مکمل ہینڈز آن ٹریننگ مع ہفتہ وار لائیو سیشنز اور پراجیکٹ ریویو۔</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">PKR</span>
+            <span class="amount">28,500</span>
+            <span class="term">/ مکمل کورس</span>
+          </div>
+          <div class="plan-saving highlight">ابتدائی 15 طلباء کے لیے خصوصی رعایت: <s>PKR 50,000</s></div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> <strong>تمام 7 ماڈیولز مع لائیو انٹرایکٹو کلاسز</strong></li>
+            <li><i class="fa-solid fa-check"></i> <strong>Google Antigravity & Agentic سیٹ اپ</strong></li>
+            <li><i class="fa-solid fa-check"></i> <strong>4 لائیو کمرشل پراجیکٹس کی مکمل تیاری</strong></li>
+            <li><i class="fa-solid fa-check"></i> کروم ایکسٹینشنز + ورڈپریس پلگ ان ٹیمپلیٹس</li>
+            <li><i class="fa-solid fa-check"></i> n8n اور Flowise آٹومیشن بلیو پرنٹس</li>
+            <li><i class="fa-solid fa-check"></i> وی آئی پی واٹس ایپ مانیٹرنگ اور پرائیویٹ گروپ</li>
+            <li><i class="fa-solid fa-check"></i> آفیشل ویریفائیڈ سرٹیفکیٹ اور پورٹ فولیو ریویو</li>
+          </ul>
+          <button class="btn btn-primary pulse-glow w-100 open-modal-btn" data-plan="Pro AI Engineer">ابھی نشست محفوظ کریں 🚀</button>
+          <div class="seats-left-alert">
+            <span class="pulse-dot"></span> صرف <strong>5 سیٹیں</strong> باقی ہیں!
+          </div>
+        </div>
+
+        <!-- Plan 3 -->
+        <div class="price-card glass-panel">
+          <div class="plan-header">
+            <span class="plan-type">VIP مینٹورشپ</span>
+            <h3 class="plan-name">ایگزیکٹو 1-on-1 ماسٹر مائنڈ</h3>
+            <p class="plan-sub">ایجنسی مالکان اور سنجیدہ ڈویلپرز کے لیے ذاتی رہنمائی۔</p>
+          </div>
+          <div class="plan-price">
+            <span class="currency">PKR</span>
+            <span class="amount">65,000</span>
+            <span class="term">/ مکمل مینٹورشپ</span>
+          </div>
+          <div class="plan-saving">معیاری قیمت: <s>PKR 110,000</s></div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> پرو پیکج کی تمام خصوصیات شامل</li>
+            <li><i class="fa-solid fa-check"></i> <strong>4 ہفتوں کی براہِ راست 1-on-1 پرائیویٹ کالز</strong></li>
+            <li><i class="fa-solid fa-check"></i> آپ کے اپنے بزنس یا ساس پراجیکٹ کا براہ راست معائنہ</li>
+            <li><i class="fa-solid fa-check"></i> اپ ورک اور لنکڈ ان پروفائل کی ذاتی آپٹمائزیشن</li>
+            <li><i class="fa-solid fa-check"></i> کلائنٹ انٹرویوز کے لیے ڈائریکٹ اسکرپٹس اور رہنمائی</li>
+          </ul>
+          <button class="btn btn-outline w-100 open-modal-btn" data-plan="Executive VIP Mastermind">VIP میں درخواست دیں</button>
+        </div>
+
+      </div>
+
+      <!-- Money Back Guarantee -->
+      <div class="guarantee-box glass-panel">
+        <div class="guarantee-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div class="guarantee-text">
+          <h4>100% رسک فری گارنٹی (14 دن کی منی بیک گارنٹی)</h4>
+          <p>اگر پہلے 14 دنوں میں آپ کو کورس کی ویلیو اور معیار مطمئن نہ کرے تو بغیر کسی حیل و حجت کے آپ کی 100% فیس واپس کر دی جائے گی۔ آپ کا ایک روپیہ بھی رسک پر نہیں ہے۔</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials & Social Proof -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub-badge">کامیابی کی داستانیں</span>
+        <h2 class="section-heading">طلباء کے <span class="gradient-text">حقیقی تاثرات</span></h2>
+        <p class="section-desc">دیکھیں کہ کس طرح ہمارے طلباء نے جدید AI ٹولز کو اپنا کر اپنے کریئر کو نئی بلندیوں تک پہنچایا۔</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testi-card glass-panel">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"میں 2 سال سے ورڈپریس ویب سائٹس بنا رہا تھا مگر ایک پلگ ان بنانے میں مہینے لگتے تھے۔ اس کورس کے بعد میں نے اپنا پہلا کسٹم AI ورڈپریس پلگ ان صرف 3 دنوں میں تیار کیا اور CodeCanyon پر پہلے ہی مہینے میں $800 کی سیلز کیں!"</p>
+          <div class="user-info">
+            <div class="user-avatar">ZA</div>
+            <div>
+              <strong>زین احمد</strong>
+              <span>ورڈپریس ڈویلپر، لاہور</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card glass-panel">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"Google Antigravity اور کلاڈ کے کمبینیشن نے میری کوڈنگ اسپیڈ 5 گنا بڑھا دی۔ میں نے دو کروم ایکسٹینشنز بنائیں جو اب گوگل کروم اسٹور پر لائیو ہیں اور مجھے روزانہ نئے پیڈ یوزرز مل رہے ہیں۔ لاجواب کورس!"</p>
+          <div class="user-info">
+            <div class="user-avatar">FK</div>
+            <div>
+              <strong>فرحان کاظمی</strong>
+              <span>فل اسٹیک AI انجینئر، اسلام آباد</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card glass-panel">
+          <div class="stars">★★★★★</div>
+          <p class="testi-text">"n8n اور Flowise کے ماڈیول نے میری آنکھیں کھول دیں۔ اب میں غیر ملکی کلائنٹس کو بزنس آٹومیشن ایجنٹ فراہم کر رہی ہوں اور فی پروجیکٹ $1,200 آرام سے چارج کر رہی ہوں۔ یہ صرف کورس نہیں بلکہ کمائی کا دروازہ ہے۔"</p>
+          <div class="user-info">
+            <div class="user-avatar">SN</div>
+            <div>
+              <strong>سدرہ نور</strong>
+              <span>ٹاپ ریٹڈ اپ ورک فری لانسر، کراچی</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      <div class="section-title-wrap text-center">
+        <span class="sub-badge">رہنمائی</span>
+        <h2 class="section-heading">اکثر پوچھے جانے والے <span class="gradient-text">سوالات (FAQs)</span></h2>
+        <p class="section-desc">اگر آپ کے ذہن میں کوئی ابہام ہے، تو ان سوالات سے آپ کے تمام شکوک و شبہات دور ہو جائیں گے۔</p>
+      </div>
+
+      <div class="faq-accordion">
+        <div class="faq-item glass-panel">
+          <button class="faq-q">
+            <span>کیا اس کورس کے لیے ایڈوانس کوڈنگ کا تجربہ ہونا ضروری ہے؟</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-a">
+            <p>نہیں! اگر آپ کو کمپیوٹر اور انٹرنیٹ کا بنیادی استعمال آتا ہے، تو یہ کورس آپ کے لیے پرفیکٹ ہے۔ ہم صفر سے لے کر جدید AI اسسٹڈ کوڈنگ سکھاتے ہیں تاکہ آپ کم سے کم وقت میں بغیر کوڈ کے خوف کے بڑے سافٹ ویئر بنا سکیں۔</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-q">
+            <span>کیا مجھے تمام پیڈ AI ٹولز خریدنے پڑیں گے؟</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-a">
+            <p>ہرگز نہیں! ہم نے کورس کو اس طرح ترتیب دیا ہے کہ آپ 80% سے زائد کام مکمل طور پر مفت (Free & Open Source) ٹولز جیسے کہ n8n کمیونٹی، لوکل ماڈلز، کلاؤڈ کے فری ٹائرز سے کر سکتے ہیں۔ جہاں پیڈ ٹولز کی ضرورت ہو گی، ان کے بہترین مفت متبادل بھی سکھائے جائیں گے۔</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-q">
+            <span>کلاسوں کے اوقات اور ریکارڈنگز کی کیا سہولت ہے؟</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-a">
+            <p>تمام سیشنز شام اور رات کے وقت لائیو آن لائن منعقد ہوتے ہیں تاکہ جاب کرنے والے یا طلباء آسانی سے شرکت کر سکیں۔ ہر کلاس کی فل ایچ ڈی ریکارڈنگ اور سورس کوڈ کلاس کے فوراً بعد آپ کے اسٹوڈنٹ ڈیش بورڈ پر اپلوڈ کر دیا جائے گا۔</p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-q">
+            <span>کورس مکمل کرنے کے بعد کمائی کا کیا امکان ہے؟</span>
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <div class="faq-a">
+            <p>ماڈیول 7 میں ہم آپ کو پورٹ فولیو بلڈنگ، مائیکرو ساس لانچنگ، اور Upwork/Fiverr پر پرپوزل رائٹنگ کی مکمل عملی گائیڈنس دیتے ہیں۔ جو طلباء اسائنمنٹس مکمل کرتے ہیں، وہ کورس کے دوران ہی اپنے پہلے پراجیکٹس یا کلائنٹس حاصل کر لیتے ہیں۔</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final Call to Action -->
+  <section class="final-cta-section">
+    <div class="container text-center">
+      <div class="final-cta-card glass-panel pulse-glow">
+        <span class="sub-badge">آخری موقع</span>
+        <h2>کیا آپ AI کے نئے دور کا لیڈر بننے کے لیے تیار ہیں؟</h2>
+        <p>ٹیکنالوجی کسی کا انتظار نہیں کرتی۔ آج ہی اسمارٹ فیصلہ لیں اور پرانے طریقوں کو خیرباد کہہ کر مستقبل کی ٹیکنالوجیز پر مہارت حاصل کریں۔</p>
+        <div class="final-cta-actions">
+          <button class="btn btn-primary btn-lg open-modal-btn" data-plan="Pro AI Engineer">ابھی داخلہ فارم پر کریں 🚀</button>
+          <a href="https://wa.me/?text=Hello!%20I%20am%20interested%20in%20the%20Antigravity%20AI%20Software%20Development%20Masterclass" target="_blank" class="btn btn-whatsapp btn-lg">
+            <i class="fa-brands fa-whatsapp"></i> واٹس ایپ پر بات کریں
+          </a>
+        </div>
+        <p class="guarantee-note"><i class="fa-solid fa-lock"></i> 100% محفوظ انکرپٹڈ رجسٹریشن | 14 دن منی بیک گارنٹی</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <a href="#" class="brand-logo">
+          <div class="logo-icon"><i class="fa-solid fa-atom"></i></div>
+          <div class="logo-text">
+            <span class="brand-name">ANTIGRAVITY<span class="accent-dot">.</span>AI</span>
+            <span class="brand-sub">سافٹ ویئر انجینئرنگ اکیڈمی</span>
+          </div>
+        </a>
+        <p>پاکستان اور دنیا بھر کے طلباء کو مستقبل کے AI ٹولز، گوگل اینٹی گریویٹی، کلاؤڈ اور جدید سافٹ ویئر انجینئرنگ میں خود کفیل بنانے والا اولین پلیٹ فارم۔</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>اہم لنکس</h4>
+        <ul>
+          <li><a href="#curriculum">نصاب و سلیبس</a></li>
+          <li><a href="#projects">طلباء کے پراجیکٹس</a></li>
+          <li><a href="#tools">ٹولز کٹ (پیڈ و فری)</a></li>
+          <li><a href="#pricing">فیس پیکجز</a></li>
+          <li><a href="course-outline.md" target="_blank">کورس دستاویز (MD)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>رابطہ و سپورٹ</h4>
+        <ul>
+          <li><i class="fa-solid fa-envelope"></i> admissions@antigravity-ai.edu</li>
+          <li><i class="fa-brands fa-whatsapp"></i> +92 300 0000000</li>
+          <li><i class="fa-solid fa-location-dot"></i> ٹیک حب، گلبرگ III، لاہور، پاکستان</li>
+        </ul>
+        <div class="social-row">
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-discord"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom text-center">
+      <p>© 2026 اینٹی گریویٹی AI اکیڈمی۔ جملہ حقوق محفوظ ہیں۔ Designed for High Conversions & Modern AI Era.</p>
+    </div>
+  </footer>
+
+  <!-- Enrollment Registration Modal -->
+  <div class="modal-backdrop" id="enrollModal">
+    <div class="modal-card glass-panel">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-header">
+        <div class="modal-badge"><i class="fa-solid fa-graduation-cap"></i> داخلہ فارم</div>
+        <h3 id="modalPlanTitle">کورس رجسٹریشن - پرو AI انجینئر</h3>
+        <p>براہ کرم اپنی معلومات درج کریں تاکہ ہماری ٹیم آپ کو فوری رجسٹریشن کنفرمیشن بھیج سکے۔</p>
+      </div>
+
+      <form id="enrollmentForm" class="modal-form">
+        <input type="hidden" id="selectedPlanInput" name="plan" value="Pro AI Engineer">
+
+        <div class="form-group">
+          <label for="studentName"><i class="fa-solid fa-user"></i> پورا نام (Full Name)</label>
+          <input type="text" id="studentName" placeholder="مثال: علی حسن" required>
+        </div>
+
+        <div class="form-group">
+          <label for="studentWhatsApp"><i class="fa-brands fa-whatsapp"></i> واٹس ایپ نمبر (WhatsApp Number)</label>
+          <input type="tel" id="studentWhatsApp" placeholder="مثال: +92 300 1234567" required>
+        </div>
+
+        <div class="form-group">
+          <label for="studentEmail"><i class="fa-solid fa-envelope"></i> ای میل ایڈریس (Email)</label>
+          <input type="email" id="studentEmail" placeholder="مثال: name@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="experienceLevel"><i class="fa-solid fa-chart-line"></i> آپ کا موجودہ تجربہ</label>
+          <select id="experienceLevel">
+            <option value="beginner">میں مکمل نیا ہوں (Beginner)</option>
+            <option value="intermediate">تھوڑا بہت کوڈنگ / ورڈپریس کا علم ہے (Intermediate)</option>
+            <option value="developer">میں پروفیشنل ڈویلپر ہوں اور AI سیکھنا چاہتا ہوں (Pro)</option>
+            <option value="freelancer">میں فری لانسر / ایجنسی اونر ہوں (Freelancer)</option>
+          </select>
+        </div>
+
+        <div class="modal-perks">
+          <span><i class="fa-solid fa-circle-check"></i> 40% ابتدائی ڈسکاؤنٹ لاگو ہے</span>
+          <span><i class="fa-solid fa-circle-check"></i> 14 دن منی بیک گارنٹی</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-lg w-100" id="submitEnrollBtn">
+          <span>داخلہ فارم سبمٹ کریں 🚀</span>
+        </button>
+      </form>
+
+      <div class="success-message" id="successState" style="display: none;">
+        <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+        <h3>مبارک ہو! آپ کا داخلہ موصول ہو گیا ہے 🎉</h3>
+        <p>آپ کے منتخب کردہ پلان کی مکمل تفصیلات اور واٹس ایپ وی آئی پی گروپ کا لنک ہم نے محفوظ کر لیا ہے۔</p>
+        <a href="#" id="directWhatsAppLink" target="_blank" class="btn btn-whatsapp btn-lg w-100 mt-3">
+          <i class="fa-brands fa-whatsapp"></i> فوری واٹس ایپ پر ایڈمیشن کنفرم کریں
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Live Social Proof Notification Popups -->
+  <div class="live-toast" id="liveToast">
+    <div class="toast-avatar">🧑‍💻</div>
+    <div class="toast-info">
+      <strong id="toastUser">حمزہ طارق (اسلام آباد)</strong>
+      <p id="toastAction">نے ابھی <strong>پرو AI انجینئر</strong> میں سیٹ حاصل کی!</p>
+      <span class="toast-time">2 منٹ قبل ● لائیو</span>
+    </div>
+  </div>
+
+  <!-- External Libraries: Three.js and Canvas Confetti -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
