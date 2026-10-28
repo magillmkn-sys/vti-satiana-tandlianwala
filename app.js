@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initThreeJSBackground();
   initCountdownTimer();
   initHologramTilt();
+  initAntigravityProjectsCarousel();
   initCurriculumAccordion();
   initFaqAccordion();
   initToolsFilter();
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. Three.js 3D Interactive Cybernetic Mesh & Particle System
+   1. Three.js 3D Deep Space Cybernetic Particle Field (Non-obstructive)
    ========================================================================== */
 function initThreeJSBackground() {
   const container = document.getElementById('webgl-container');
@@ -23,7 +24,7 @@ function initThreeJSBackground() {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 28;
+  camera.position.z = 32;
 
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
@@ -34,49 +35,37 @@ function initThreeJSBackground() {
   const mainGroup = new THREE.Group();
   scene.add(mainGroup);
 
-  // 1. Cyber 3D Torus Wireframe (Holographic core)
-  const torusGeometry = new THREE.TorusGeometry(8, 2.2, 16, 100);
-  const torusMaterial = new THREE.MeshBasicMaterial({
-    color: 0x00f5d4,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.18,
-  });
-  const torusMesh = new THREE.Mesh(torusGeometry, torusMaterial);
-  mainGroup.add(torusMesh);
+  // Deep subtle cyber ambient rings (placed deep in background z = -35 so it never overlaps text)
+  const ringGeo1 = new THREE.RingGeometry(18, 18.3, 64);
+  const ringMat1 = new THREE.MeshBasicMaterial({ color: 0x00f5d4, side: THREE.DoubleSide, transparent: true, opacity: 0.12 });
+  const ring1 = new THREE.Mesh(ringGeo1, ringMat1);
+  ring1.position.set(0, 0, -30);
+  mainGroup.add(ring1);
 
-  // 2. Inner Icosahedron Node (Center AI Core)
-  const icoGeometry = new THREE.IcosahedronGeometry(4, 1);
-  const icoMaterial = new THREE.MeshBasicMaterial({
-    color: 0xa855f7,
-    wireframe: true,
-    transparent: true,
-    opacity: 0.35,
-  });
-  const icoMesh = new THREE.Mesh(icoGeometry, icoMaterial);
-  mainGroup.add(icoMesh);
+  const ringGeo2 = new THREE.RingGeometry(24, 24.4, 64);
+  const ringMat2 = new THREE.MeshBasicMaterial({ color: 0xa855f7, side: THREE.DoubleSide, transparent: true, opacity: 0.08 });
+  const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
+  ring2.position.set(0, 0, -32);
+  mainGroup.add(ring2);
 
-  // 3. Floating 3D Cyber Particles (1,500 particles)
-  const particleCount = 1500;
+  // Floating 3D Cyber Particles (1,600 luminous particles)
+  const particleCount = 1600;
   const particleGeometry = new THREE.BufferGeometry();
   const positions = new Float32Array(particleCount * 3);
   const colors = new Float32Array(particleCount * 3);
 
   const colorPalette = [
-    new THREE.Color(0x00f5d4), // Cyan
+    new THREE.Color(0x00f5d4), // Neon Cyan
     new THREE.Color(0x38bdf8), // Sky Blue
-    new THREE.Color(0xa855f7), // Purple
-    new THREE.Color(0xffffff)  // White star
+    new THREE.Color(0xa855f7), // Vibrant Purple
+    new THREE.Color(0xf43f5e), // Cyber Pink
+    new THREE.Color(0xffffff)  // White Star
   ];
 
   for (let i = 0; i < particleCount; i++) {
-    const x = (Math.random() - 0.5) * 80;
-    const y = (Math.random() - 0.5) * 80;
-    const z = (Math.random() - 0.5) * 70;
-
-    positions[i * 3] = x;
-    positions[i * 3 + 1] = y;
-    positions[i * 3 + 2] = z;
+    positions[i * 3] = (Math.random() - 0.5) * 110;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 100;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 80 - 15;
 
     const chosenColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
     colors[i * 3] = chosenColor.r;
@@ -88,7 +77,7 @@ function initThreeJSBackground() {
   particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
   const particleMaterial = new THREE.PointsMaterial({
-    size: 0.22,
+    size: 0.26,
     vertexColors: true,
     transparent: true,
     opacity: 0.75,
@@ -105,8 +94,8 @@ function initThreeJSBackground() {
   let targetY = 0;
 
   window.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX - window.innerWidth / 2) * 0.001;
-    mouseY = (e.clientY - window.innerHeight / 2) * 0.001;
+    mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
+    mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
   });
 
   // Animation Loop
@@ -120,32 +109,100 @@ function initThreeJSBackground() {
     targetX += (mouseX - targetX) * 0.05;
     targetY += (mouseY - targetY) * 0.05;
 
-    mainGroup.rotation.y = targetX * 1.5 + elapsedTime * 0.06;
-    mainGroup.rotation.x = targetY * 1.5 + Math.sin(elapsedTime * 0.2) * 0.1;
+    mainGroup.rotation.y = targetX * 1.2 + elapsedTime * 0.03;
+    mainGroup.rotation.x = targetY * 1.2 + Math.sin(elapsedTime * 0.2) * 0.05;
 
-    // Torus rotations
-    torusMesh.rotation.x = elapsedTime * 0.15;
-    torusMesh.rotation.y = elapsedTime * 0.12;
+    ring1.rotation.z = elapsedTime * 0.08;
+    ring2.rotation.z = -elapsedTime * 0.05;
 
-    // Icosahedron counter rotation
-    icoMesh.rotation.x = -elapsedTime * 0.25;
-    icoMesh.rotation.y = -elapsedTime * 0.2;
-
-    // Gentle particle oscillation
-    particleSystem.rotation.y = elapsedTime * 0.02;
+    particleSystem.rotation.y = elapsedTime * 0.015;
 
     renderer.render(scene, camera);
   }
 
   animate();
 
-  // Resize handler
   window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   });
+}
+
+/* ==========================================================================
+   Antigravity 3D Projects Showcase Carousel & Interactive Tabs
+   ========================================================================== */
+function initAntigravityProjectsCarousel() {
+  const slides = document.querySelectorAll('.ag-slide');
+  const tabs = document.querySelectorAll('.ag-tab-btn');
+  const dots = document.querySelectorAll('.ag-dot');
+  const prevBtn = document.getElementById('agPrevBtn');
+  const nextBtn = document.getElementById('agNextBtn');
+  const deck = document.getElementById('holoCard');
+
+  if (!slides.length) return;
+
+  let currentIndex = 0;
+  let autoTimer = null;
+
+  function showSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    currentIndex = index;
+
+    slides.forEach((s, i) => s.classList.toggle('active', i === currentIndex));
+    tabs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+  }
+
+  function startTimer() {
+    stopTimer();
+    autoTimer = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, 4500);
+  }
+
+  function stopTimer() {
+    if (autoTimer) clearInterval(autoTimer);
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const idx = parseInt(tab.dataset.index, 10);
+      showSlide(idx);
+      startTimer();
+    });
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.dataset.index, 10);
+      showSlide(idx);
+      startTimer();
+    });
+  });
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      showSlide(currentIndex - 1);
+      startTimer();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      showSlide(currentIndex + 1);
+      startTimer();
+    });
+  }
+
+  if (deck) {
+    deck.addEventListener('mouseenter', stopTimer);
+    deck.addEventListener('mouseleave', startTimer);
+  }
+
+  startTimer();
 }
 
 /* ==========================================================================

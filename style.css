@@ -4263,3 +4263,382 @@ h1, h2, h3, h4, h5, h6 {
     height: 260px;
   }
 }
+
+/* ==========================================================================
+   Antigravity 3D Project Showcase Deck & Ambient Holograms
+   ========================================================================== */
+.ag-showcase-visual {
+  position: relative;
+  perspective: 1200px;
+}
+
+.ag-project-deck {
+  padding: 1.25rem;
+  background: rgba(13, 17, 28, 0.88);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 245, 212, 0.35);
+  box-shadow: 0 25px 60px -15px rgba(0, 245, 212, 0.25), 0 0 35px rgba(168, 85, 247, 0.2);
+  border-radius: 1.25rem;
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out, box-shadow 0.3s ease;
+  z-index: 5;
+}
+
+.ag-project-deck:hover {
+  box-shadow: 0 30px 70px -15px rgba(0, 245, 212, 0.4), 0 0 50px rgba(168, 85, 247, 0.3);
+}
+
+.ag-deck-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  background: rgba(15, 23, 42, 0.7);
+  padding: 0.4rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ag-tab-btn {
+  flex: 1 1 auto;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  padding: 0.4rem 0.65rem;
+  border-radius: 7px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+}
+
+.ag-tab-btn:hover {
+  color: #00f5d4;
+  background: rgba(0, 245, 212, 0.08);
+}
+
+.ag-tab-btn.active {
+  background: linear-gradient(135deg, rgba(0, 245, 212, 0.25), rgba(168, 85, 247, 0.25));
+  color: #ffffff;
+  border: 1px solid rgba(0, 245, 212, 0.5);
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
+}
+
+.ag-carousel-stage {
+  position: relative;
+  min-height: 380px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0b0f19;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ag-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.96) translateY(10px);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+  display: flex;
+  flex-direction: column;
+  background: #0b0f19;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ag-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+  position: relative;
+}
+
+.ag-slide-media {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.ag-slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: contrast(1.05) saturate(1.1);
+}
+
+.ag-slide:hover .ag-slide-img {
+  transform: scale(1.05);
+}
+
+.ag-slide-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(13, 17, 28, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid #00f5d4;
+  color: #00f5d4;
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 245, 212, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ag-slide-stat {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(13, 17, 28, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid #a855f7;
+  color: #f1f5f9;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.3rem 0.7rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.ag-slide-stat i {
+  color: #eab308;
+}
+
+.ag-slide-info {
+  padding: 1.1rem;
+  text-align: right;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ag-slide-info h4 {
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.ag-slide-info p {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.ag-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.ag-tags span {
+  font-size: 0.7rem;
+  background: rgba(0, 245, 212, 0.1);
+  color: #00f5d4;
+  border: 1px solid rgba(0, 245, 212, 0.25);
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-family: var(--font-code);
+}
+
+.ag-deck-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ag-ctrl-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #f1f5f9;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.ag-ctrl-btn:hover {
+  background: #00f5d4;
+  color: #0d111c;
+  border-color: #00f5d4;
+  box-shadow: 0 0 12px rgba(0, 245, 212, 0.5);
+}
+
+.ag-dots {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.ag-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.ag-dot.active {
+  width: 22px;
+  border-radius: 10px;
+  background: #00f5d4;
+  box-shadow: 0 0 10px rgba(0, 245, 212, 0.6);
+}
+
+/* Ambient Floating Project Badges */
+.ambient-project-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(13, 17, 28, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 245, 212, 0.4);
+  padding: 0.55rem 0.9rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 245, 212, 0.2);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ambient-project-badge i {
+  font-size: 1.4rem;
+  color: #00f5d4;
+  filter: drop-shadow(0 0 8px rgba(0, 245, 212, 0.5));
+}
+
+.ambient-project-badge div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.ambient-project-badge strong {
+  font-size: 0.78rem;
+  color: #ffffff;
+  font-family: var(--font-code);
+}
+
+.ambient-project-badge span {
+  font-size: 0.68rem;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.amb-1 {
+  top: -24px;
+  right: -25px;
+  animation: floatAmb1 5s ease-in-out infinite alternate;
+}
+
+.amb-2 {
+  bottom: 25px;
+  right: -30px;
+  border-color: rgba(168, 85, 247, 0.5);
+  animation: floatAmb2 6s ease-in-out infinite alternate;
+}
+
+.amb-2 i {
+  color: #a855f7;
+  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.5));
+}
+
+.amb-3 {
+  bottom: -22px;
+  left: 20px;
+  border-color: rgba(56, 189, 248, 0.4);
+  animation: floatAmb3 5.5s ease-in-out infinite alternate;
+}
+
+.amb-3 i {
+  color: #38bdf8;
+}
+
+@keyframes floatAmb1 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-12px) rotate(2deg); }
+}
+
+@keyframes floatAmb2 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(14px) rotate(-2deg); }
+}
+
+@keyframes floatAmb3 {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(-1.5deg); }
+}
+
+/* Projects Grid 3D Media Styles */
+.project-visual-media {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.project-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: contrast(1.05) saturate(1.1);
+}
+
+.project-card:hover .project-card-img {
+  transform: scale(1.08);
+}
+
+.media-overlay-badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(13, 17, 28, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid #00f5d4;
+  color: #00f5d4;
+  font-family: var(--font-code);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 245, 212, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+@media (max-width: 992px) {
+  .ambient-project-badge {
+    display: none;
+  }
+}
