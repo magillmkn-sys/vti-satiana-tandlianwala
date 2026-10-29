@@ -418,27 +418,12 @@ function initMobileMenu() {
   if (!toggleBtn || !navLinks) return;
 
   toggleBtn.addEventListener('click', () => {
-    if (navLinks.style.display === 'flex') {
-      navLinks.style.display = 'none';
-    } else {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '100%';
-      navLinks.style.left = '0';
-      navLinks.style.right = '0';
-      navLinks.style.background = '#06130e';
-      navLinks.style.padding = '1.5rem';
-      navLinks.style.borderBottom = '1px solid rgba(16, 185, 129, 0.2)';
-      navLinks.style.gap = '1.2rem';
-    }
+    navLinks.classList.toggle('active');
   });
 
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navLinks.style.display = 'none';
-      }
+      navLinks.classList.remove('active');
     });
   });
 }
@@ -776,6 +761,26 @@ function init3DTradeShowcase() {
       }
     });
   });
+
+  // Touch Swipe Gesture Support for Mobile & Tablets
+  let touchStartX = 0;
+  let touchEndX = 0;
+  stage.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  stage.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 40) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+      resetTimer();
+    }
+  }, { passive: true });
 
   showSlide(0);
   startTimer();

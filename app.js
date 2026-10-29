@@ -325,6 +325,26 @@ function initAntigravityProjectsCarousel() {
   if (deck) {
     deck.addEventListener('mouseenter', stopTimer);
     deck.addEventListener('mouseleave', startTimer);
+
+    // Touch Swipe Gesture Support for Mobile & Tablets
+    let touchStartX = 0;
+    let touchEndX = 0;
+    deck.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    deck.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) {
+          showSlide(currentIndex + 1);
+        } else {
+          showSlide(currentIndex - 1);
+        }
+        startTimer();
+      }
+    }, { passive: true });
   }
 
   startTimer();
@@ -587,28 +607,13 @@ function initMobileMenu() {
   if (!toggleBtn || !navLinks) return;
 
   toggleBtn.addEventListener('click', () => {
-    if (navLinks.style.display === 'flex') {
-      navLinks.style.display = 'none';
-    } else {
-      navLinks.style.display = 'flex';
-      navLinks.style.flexDirection = 'column';
-      navLinks.style.position = 'absolute';
-      navLinks.style.top = '100%';
-      navLinks.style.left = '0';
-      navLinks.style.right = '0';
-      navLinks.style.background = '#090d1f';
-      navLinks.style.padding = '1.5rem';
-      navLinks.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
-      navLinks.style.gap = '1.2rem';
-    }
+    navLinks.classList.toggle('active');
   });
 
   // Close menu on link click
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navLinks.style.display = 'none';
-      }
+      navLinks.classList.remove('active');
     });
   });
 }

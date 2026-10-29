@@ -4876,3 +4876,218 @@ h1, h2, h3, h4, h5, h6 {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Mobile & Tablet Ultimate Responsive Design (SEO & Touch Friendly)
+   ========================================================================== */
+
+/* 1. Prevent Any Horizontal Scroll */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* 2. Tablets & iPads (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .vti-showcase-visual, .ag-showcase-visual {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+  
+  .about-grid, .placement-grid, .faculty-grid, .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .campus-status-banner {
+    grid-template-columns: 1fr;
+  }
+  
+  .rpl-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 3. Horizontal Scrollable Trade & Project Tabs for Mobile & Tablets */
+@media (max-width: 992px) {
+  .vti-deck-tabs, .ag-deck-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0.4rem 0.2rem;
+    gap: 0.5rem;
+  }
+  
+  .vti-deck-tabs::-webkit-scrollbar, .ag-deck-tabs::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .vti-tab-btn, .ag-tab-btn {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    font-size: 0.76rem !important;
+    padding: 0.45rem 0.85rem !important;
+  }
+  
+  .ambient-vti-badge, .ambient-project-badge {
+    display: none !important;
+  }
+}
+
+/* 4. Smart Phones & Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Gov Top Bar wrapping */
+  .gov-bar-inner {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding: 0.6rem 0.5rem;
+  }
+  
+  .gov-contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+  
+  .gov-contacts .divider {
+    display: none;
+  }
+
+  /* Typography Fluid Scaling */
+  .hero-title {
+    font-size: clamp(1.6rem, 5.5vw, 2.4rem) !important;
+    line-height: 1.8 !important;
+  }
+  
+  .section-heading {
+    font-size: clamp(1.5rem, 5vw, 2.2rem) !important;
+  }
+
+  /* Trade Showcase & Antigravity Deck Stage Mobile Height */
+  .trade-stage-container {
+    min-height: 520px !important;
+  }
+  
+  .ag-carousel-stage {
+    min-height: 480px !important;
+  }
+  
+  .slide-media-wrap, .ag-slide-media {
+    height: 190px !important;
+  }
+  
+  .slide-info-wrap h3, .ag-slide-info h4 {
+    font-size: 1.05rem !important;
+    line-height: 1.6 !important;
+  }
+  
+  .slide-stats-bar {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  /* Hero Metrics Compact */
+  .hero-metrics {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1.2rem;
+  }
+  
+  .metric-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+  }
+
+  /* Mobile Navigation Drawer */
+  .navbar .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(5, 20, 15, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 1.5rem 1rem;
+    border-bottom: 2px solid rgba(16, 185, 129, 0.3);
+    gap: 1rem;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+  }
+  
+  .navbar .nav-links.active {
+    display: flex !important;
+    animation: slideDownMenu 0.3s ease-out forwards;
+  }
+  
+  @keyframes slideDownMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .navbar .nav-actions {
+    display: flex !important;
+  }
+  
+  .navbar .btn-nav-admission, .navbar .open-vti-modal {
+    font-size: 0.78rem !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+
+  /* Chatbot Window on Mobile (Full-width floating modal) */
+  .chatbot-window {
+    width: calc(100vw - 20px) !important;
+    right: 10px !important;
+    left: 10px !important;
+    bottom: 80px !important;
+    max-height: 80vh !important;
+    border-radius: 16px !important;
+  }
+
+  /* Modal Form on Mobile */
+  .vti-modal-card, .modal-card {
+    width: 95% !important;
+    margin: 1rem auto !important;
+    padding: 1.2rem !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+  }
+  
+  .form-row-2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* 5. Extra Small Devices (iPhone SE, Galaxy A-series <= 390px) */
+@media (max-width: 390px) {
+  .brand-name {
+    font-size: 1rem !important;
+  }
+  
+  .brand-sub {
+    font-size: 0.65rem !important;
+  }
+  
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+}
