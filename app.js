@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   1. Three.js 3D Deep Space Cybernetic Particle Field (Non-obstructive)
+   1. Three.js 3D Deep Cybernetic Universe (Scroll-Linked Down Entire Page)
    ========================================================================== */
 function initThreeJSBackground() {
   const container = document.getElementById('webgl-container');
@@ -24,32 +24,120 @@ function initThreeJSBackground() {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 32;
+  camera.position.z = 30;
 
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   container.appendChild(renderer.domElement);
 
-  // Group for mouse parallax
-  const mainGroup = new THREE.Group();
-  scene.add(mainGroup);
+  // Main group that responds to scroll and mouse parallax
+  const worldGroup = new THREE.Group();
+  scene.add(worldGroup);
 
-  // Deep subtle cyber ambient rings (placed deep in background z = -35 so it never overlaps text)
-  const ringGeo1 = new THREE.RingGeometry(18, 18.3, 64);
-  const ringMat1 = new THREE.MeshBasicMaterial({ color: 0x00f5d4, side: THREE.DoubleSide, transparent: true, opacity: 0.12 });
-  const ring1 = new THREE.Mesh(ringGeo1, ringMat1);
-  ring1.position.set(0, 0, -30);
-  mainGroup.add(ring1);
+  // --- 1. Hero Level (y = 0): Futuristic Cybernetic Torus Knot & Holographic Core ---
+  const heroGroup = new THREE.Group();
+  heroGroup.position.set(12, 2, -5);
 
-  const ringGeo2 = new THREE.RingGeometry(24, 24.4, 64);
-  const ringMat2 = new THREE.MeshBasicMaterial({ color: 0xa855f7, side: THREE.DoubleSide, transparent: true, opacity: 0.08 });
-  const ring2 = new THREE.Mesh(ringGeo2, ringMat2);
-  ring2.position.set(0, 0, -32);
-  mainGroup.add(ring2);
+  const torusKnotGeo = new THREE.TorusKnotGeometry(6, 1.4, 100, 16);
+  const torusKnotMat = new THREE.MeshBasicMaterial({
+    color: 0x00f5d4,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.28
+  });
+  const torusKnotMesh = new THREE.Mesh(torusKnotGeo, torusKnotMat);
+  heroGroup.add(torusKnotMesh);
 
-  // Floating 3D Cyber Particles (1,600 luminous particles)
-  const particleCount = 1600;
+  const icoGeo = new THREE.IcosahedronGeometry(3.5, 1);
+  const icoMat = new THREE.MeshBasicMaterial({
+    color: 0xa855f7,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.45
+  });
+  const icoMesh = new THREE.Mesh(icoGeo, icoMat);
+  heroGroup.add(icoMesh);
+
+  // Outer orbital rings
+  const ringGeo = new THREE.RingGeometry(8.5, 8.8, 64);
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, side: THREE.DoubleSide, transparent: true, opacity: 0.25 });
+  const orbitRing = new THREE.Mesh(ringGeo, ringMat);
+  heroGroup.add(orbitRing);
+
+  worldGroup.add(heroGroup);
+
+  // --- 2. Curriculum / Mid-Level (y = -35): Floating Polyhedral Data Crystals ---
+  const midGroup = new THREE.Group();
+  midGroup.position.set(-14, -32, -8);
+
+  const octaGeo = new THREE.OctahedronGeometry(5, 0);
+  const octaMat = new THREE.MeshBasicMaterial({
+    color: 0x00f5d4,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.3
+  });
+  const octaMesh = new THREE.Mesh(octaGeo, octaMat);
+  midGroup.add(octaMesh);
+
+  const dodecaGeo = new THREE.DodecahedronGeometry(7, 1);
+  const dodecaMat = new THREE.MeshBasicMaterial({
+    color: 0xa855f7,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.2
+  });
+  const dodecaMesh = new THREE.Mesh(dodecaGeo, dodecaMat);
+  midGroup.add(dodecaMesh);
+
+  worldGroup.add(midGroup);
+
+  // --- 3. Projects & Tools Level (y = -70): Cybernetic Data Matrix & Orbitals ---
+  const projGroup = new THREE.Group();
+  projGroup.position.set(14, -68, -10);
+
+  const projTorusGeo = new THREE.TorusGeometry(8, 1.8, 16, 80);
+  const projTorusMat = new THREE.MeshBasicMaterial({
+    color: 0x38bdf8,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.25
+  });
+  const projTorus = new THREE.Mesh(projTorusGeo, projTorusMat);
+  projGroup.add(projTorus);
+
+  const innerIco = new THREE.IcosahedronGeometry(4, 0);
+  const innerIcoMat = new THREE.MeshBasicMaterial({
+    color: 0xf43f5e,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.35
+  });
+  const innerIcoMesh = new THREE.Mesh(innerIco, innerIcoMat);
+  projGroup.add(innerIcoMesh);
+
+  worldGroup.add(projGroup);
+
+  // --- 4. Pricing & Testimonials Level (y = -105): Digital Wave Grid & Horizon ---
+  const lowerGroup = new THREE.Group();
+  lowerGroup.position.set(0, -105, -5);
+
+  const gridPlaneGeo = new THREE.PlaneGeometry(60, 60, 30, 30);
+  const gridPlaneMat = new THREE.MeshBasicMaterial({
+    color: 0x00f5d4,
+    wireframe: true,
+    transparent: true,
+    opacity: 0.15
+  });
+  const gridPlane = new THREE.Mesh(gridPlaneGeo, gridPlaneMat);
+  gridPlane.rotation.x = Math.PI / 2.3;
+  lowerGroup.add(gridPlane);
+
+  worldGroup.add(lowerGroup);
+
+  // --- 5. Massive Continuous Particle Cloud (2,800 Particles extending all the way down) ---
+  const particleCount = 2800;
   const particleGeometry = new THREE.BufferGeometry();
   const positions = new Float32Array(particleCount * 3);
   const colors = new Float32Array(particleCount * 3);
@@ -57,15 +145,16 @@ function initThreeJSBackground() {
   const colorPalette = [
     new THREE.Color(0x00f5d4), // Neon Cyan
     new THREE.Color(0x38bdf8), // Sky Blue
-    new THREE.Color(0xa855f7), // Vibrant Purple
-    new THREE.Color(0xf43f5e), // Cyber Pink
-    new THREE.Color(0xffffff)  // White Star
+    new THREE.Color(0xa855f7), // Vibrant Violet
+    new THREE.Color(0xf43f5e), // Neon Pink
+    new THREE.Color(0xffffff)  // Sparkle
   ];
 
   for (let i = 0; i < particleCount; i++) {
-    positions[i * 3] = (Math.random() - 0.5) * 110;
-    positions[i * 3 + 1] = (Math.random() - 0.5) * 100;
-    positions[i * 3 + 2] = (Math.random() - 0.5) * 80 - 15;
+    // Spread along the entire vertical page height (from y = 20 down to y = -140)
+    positions[i * 3] = (Math.random() - 0.5) * 90;
+    positions[i * 3 + 1] = Math.random() * -150 + 20;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 60 - 5;
 
     const chosenColor = colorPalette[Math.floor(Math.random() * colorPalette.length)];
     colors[i * 3] = chosenColor.r;
@@ -77,44 +166,80 @@ function initThreeJSBackground() {
   particleGeometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
   const particleMaterial = new THREE.PointsMaterial({
-    size: 0.26,
+    size: 0.32,
     vertexColors: true,
     transparent: true,
-    opacity: 0.75,
-    blending: THREE.AdditiveBlending,
+    opacity: 0.8,
+    blending: THREE.AdditiveBlending
   });
 
   const particleSystem = new THREE.Points(particleGeometry, particleMaterial);
-  mainGroup.add(particleSystem);
+  worldGroup.add(particleSystem);
 
-  // Mouse Parallax movement
+  // --- Mouse & Scroll Interactivity ---
   let mouseX = 0;
   let mouseY = 0;
-  let targetX = 0;
-  let targetY = 0;
+  let targetMouseX = 0;
+  let targetMouseY = 0;
+  let currentScrollY = 0;
+  let targetScrollY = 0;
 
   window.addEventListener('mousemove', (e) => {
     mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
     mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
   });
 
-  // Animation Loop
+  window.addEventListener('scroll', () => {
+    targetScrollY = window.scrollY;
+  });
+
+  // Calculate max scroll ratio for seamless camera travel down the page
+  function getScrollProgress() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    return docHeight > 0 ? (targetScrollY / docHeight) : 0;
+  }
+
+  // --- Animation Loop ---
   const clock = new THREE.Clock();
 
   function animate() {
     requestAnimationFrame(animate);
     const elapsedTime = clock.getElapsedTime();
 
-    // Smooth lerp mouse tracking
-    targetX += (mouseX - targetX) * 0.05;
-    targetY += (mouseY - targetY) * 0.05;
+    // Smooth lerp mouse & scroll
+    targetMouseX += (mouseX - targetMouseX) * 0.05;
+    targetMouseY += (mouseY - targetMouseY) * 0.05;
+    currentScrollY += (targetScrollY - currentScrollY) * 0.08;
 
-    mainGroup.rotation.y = targetX * 1.2 + elapsedTime * 0.03;
-    mainGroup.rotation.x = targetY * 1.2 + Math.sin(elapsedTime * 0.2) * 0.05;
+    // Camera travels smoothly down as visitor scrolls the webpage!
+    const progress = getScrollProgress();
+    camera.position.y = -(progress * 110);
 
-    ring1.rotation.z = elapsedTime * 0.08;
-    ring2.rotation.z = -elapsedTime * 0.05;
+    // Subtle parallax tilt
+    worldGroup.rotation.y = targetMouseX * 0.8;
+    worldGroup.rotation.x = targetMouseY * 0.8;
 
+    // 1. Hero meshes continuous 3D rotation
+    torusKnotMesh.rotation.x = elapsedTime * 0.25;
+    torusKnotMesh.rotation.y = elapsedTime * 0.3;
+    icoMesh.rotation.x = -elapsedTime * 0.35;
+    icoMesh.rotation.y = -elapsedTime * 0.25;
+    orbitRing.rotation.z = elapsedTime * 0.15;
+
+    // 2. Mid-level crystals rotation
+    octaMesh.rotation.x = elapsedTime * 0.2;
+    octaMesh.rotation.y = elapsedTime * 0.25;
+    dodecaMesh.rotation.y = -elapsedTime * 0.15;
+
+    // 3. Projects matrix rotation
+    projTorus.rotation.x = Math.PI / 4 + Math.sin(elapsedTime * 0.5) * 0.2;
+    projTorus.rotation.y = elapsedTime * 0.2;
+    innerIcoMesh.rotation.y = -elapsedTime * 0.3;
+
+    // 4. Undulating wave grid
+    gridPlane.rotation.z = Math.sin(elapsedTime * 0.2) * 0.08;
+
+    // Continuous particle gentle drift
     particleSystem.rotation.y = elapsedTime * 0.015;
 
     renderer.render(scene, camera);

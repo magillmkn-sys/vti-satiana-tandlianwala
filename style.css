@@ -59,7 +59,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -2;
+  z-index: 0;
   pointer-events: none;
 }
 
@@ -423,9 +423,15 @@ body {
 }
 
 /* ================= Hero Section ================= */
+section {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-section {
   padding: 4.5rem 0 5rem;
   position: relative;
+  z-index: 2;
 }
 
 .hero-grid {
