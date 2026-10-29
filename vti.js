@@ -355,7 +355,7 @@ function initAdmissionModal() {
       const message = encodeURIComponent(
         `السلام علیکم! میں نے ووکیشنل ٹریننگ انسٹیٹیوٹ کی ویب سائٹ سے آن لائن داخلہ فارم پر کیا ہے۔\n\nطالب علم کا نام: ${name}\nولدیت: ${father}\nشناختی کارڈ / ب فارم: ${cnic}\nفون: ${phone}\nکیمپس: ${campus}\nمطلوبہ شعبہ: ${trade}\nپتہ: ${address}\n\nبراہ کرم دستاویزات کی تصدیق اور داخلہ انٹرویو کی تاریخ سے آگاہ کریں۔ شکریہ!`
       );
-      const waUrl = `https://wa.me/923009486686?text=${message}`;
+      const waUrl = `https://wa.me/923338928010?text=${message}`;
 
       if (waBtn) {
         waBtn.setAttribute('href', waUrl);
@@ -471,7 +471,7 @@ function initVtiChatbot() {
 2. جوابات زیادہ لمبے نہ ہوں (2 سے 4 جامع جملے یا پوائنٹس) تاکہ موبائل سکرین پر پڑھنا آسان ہو۔
 3. ادارے کے بارے میں حقائق کا ڈیٹا بیس:
    - ستیانہ کیمپس (مین): قیام مارچ 2005 (19 سالہ تاریخ)۔ مقام: جھامرہ موڑ، نزد UBL بینک، ستیانہ روڈ، تحصیل جڑانوالہ، ضلع فیصل آباد۔ فون: 041-4716558، ای میل: vtisatiana@pvtc.gop.pk۔
-   - پرنسپل: جناب سرشار احمد (Mr. Sarshar Ahmad) - MBE, M.Phil (19 سالہ سروس برائے PVTC، سیل/واٹس ایپ: 0300-9486686)۔
+   - پرنسپل: جناب ناصر محمود (Mr. Nasir Mahmood) - MBA Finance (پرنسپل، VTI ستیانہ و تاندلیانوالہ کیمپس)۔ کیریئر گائیڈنس اینڈ پلیسمنٹ آفیسر (CGPO): فون / واٹس ایپ 0333-8928010۔
    - تاندلیانوالہ کیمپس (SVTI): قیام جنوری 2022۔ کیمپس انچارج: جناب محمد زاہد محمود (20 سالہ سروس)۔ مقام: مین تاندلیانوالہ۔
    - اہم فوائد: 100% مفت داخلہ و تعلیم، مفت یونیفارم، کتب و بیگز، پرواز کارڈ / زکوٰۃ اسکالرشپ کے ذریعے ماہانہ نقد وظیفہ، 2 ماہ کی باقاعدہ فیکٹری/انڈسٹریل انٹرن شپ (OJT)، اور 73% سے 88% روزگار کی شرح۔
    - فعال ٹریڈز / کورسز:
@@ -488,7 +488,7 @@ function initVtiChatbot() {
    - کیریئر گائیڈنس اینڈ پلیسمنٹ سیل (CGPO): جناب محمد افضل (11 سالہ تجربہ)۔ بیرونی ممالک میں ملازمتیں (عمان Oman، تاجکستان Tajikistan، بیلاروس Belarus) اور سالانہ میگا جاب فیئرز۔
 4. اگر کوئی سوال اس معلومات کے دائرے سے باہر ہو، یا کوئی تفصیلی انفرادی مسئلہ یا شکایت ہو، تو سائل کو ہمیشہ ادب کے ساتھ ہمارے سی جی پی او آفیسر سے رابطہ کرنے کا کہیں:
    "اس مخصوص معلومات یا خصوصی رہنمائی کے لیے براہِ کرم ہمارے کیریئر گائیڈنس اینڈ پلیسمنٹ آفیسر (CGPO) جناب محمد افضل یا ایڈمیشن آفس سے رابطہ فرمائیں:
-   • پرنسپل / داخلہ آفس واٹس ایپ و کال: 0300-9486686
+   • کیریئر گائیڈنس اینڈ پلیسمنٹ آفیسر (CGPO) واٹس ایپ و کال: 0333-8928010
    • ستیانہ کیمپس پی ٹی سی ایل: 041-4716558
    • ای میل: vtisatiana@pvtc.gop.pk"`;
 
@@ -556,7 +556,7 @@ function initVtiChatbot() {
       console.error('Chatbot API error:', err);
       typingIndicator.style.display = 'none';
       appendMessage(
-        'معذرت، اس وقت سرور کا رابطہ سست ہے۔ براہ کرم داخلے کی فوری معلومات کے لیے ہمارے کیریئر گائیڈنس اینڈ پلیسمنٹ آفیسر (CGPO) یا پرنسپل آفس سے براہِ راست رابطہ کریں:\n\n📞 پرنسپل و ایڈمیشن واٹس ایپ: 0300-9486686\n☎ ستیانہ کیمپس: 041-4716558\n✉ ای میل: vtisatiana@pvtc.gop.pk',
+        'معذرت، اس وقت سرور کا رابطہ سست ہے۔ براہ کرم داخلے کی فوری معلومات کے لیے ہمارے کیریئر گائیڈنس اینڈ پلیسمنٹ آفیسر (CGPO) یا پرنسپل آفس سے براہِ راست رابطہ کریں:\n\n📞 کیریئر گائیڈنس اینڈ پلیسمنٹ آفیسر (CGPO): 0333-8928010\n☎ ستیانہ کیمپس: 041-4716558\n✉ ای میل: vtisatiana@pvtc.gop.pk',
         'bot'
       );
     } finally {
@@ -695,6 +695,12 @@ function init3DTradeShowcase() {
       if (i === currentIndex) dot.classList.add('active');
       else dot.classList.remove('active');
     });
+
+    const tradeTabs = document.querySelectorAll('.vti-tab-btn');
+    tradeTabs.forEach((tab, i) => {
+      if (i === currentIndex) tab.classList.add('active');
+      else tab.classList.remove('active');
+    });
   }
 
   function nextSlide() {
@@ -738,12 +744,38 @@ function init3DTradeShowcase() {
     startTimer();
   }
 
-  // Pause on hover
+  // Pause on hover and 3D Interactive Card Perspective Tilt on Mouse Movement
   const showcaseContainer = document.getElementById('trade3DShowcase');
   if (showcaseContainer) {
     showcaseContainer.addEventListener('mouseenter', () => clearInterval(autoTimer));
-    showcaseContainer.addEventListener('mouseleave', () => startTimer());
+    showcaseContainer.addEventListener('mouseleave', () => {
+      startTimer();
+      showcaseContainer.style.transform = 'perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+
+    showcaseContainer.addEventListener('mousemove', (e) => {
+      const rect = showcaseContainer.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      const rotX = -(y / rect.height) * 14;
+      const rotY = (x / rect.width) * 14;
+
+      showcaseContainer.style.transform = `perspective(1200px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
   }
+
+  // Quick-selector Trade Tabs Click Handling
+  const tradeTabs = document.querySelectorAll('.vti-tab-btn');
+  tradeTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const idx = parseInt(tab.getAttribute('data-index'), 10);
+      if (!isNaN(idx)) {
+        showSlide(idx);
+        resetTimer();
+      }
+    });
+  });
 
   showSlide(0);
   startTimer();
